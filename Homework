@@ -8,18 +8,20 @@ val3  DWORD 0FFFFh
 val4  WORD  7FFFh
 
 1. Write an instruction that increments val2.
-
+      inc val2
 2. Write an instruction that subtracts val3 from EAX.
-
+      sub eax,val3
 3. Write instructions that subtract val4 from val2.
-
+      Code:
+            mov ax,val4
+            sub val2,ax
 4. If val2 is incremented by 1 using the ADD instruction, what will be the values of the Carry and Sign flags?
-
+      CF=0, SF=1
 5. If val4 is incremented by 1 using the ADD instruction, what will be the values of the Overflow and Sign flags?
-
+      OF=1, SF=1
 6. Where indicated, write down the values of the Carry, Sign, Zero, and Overflow flags after each instruction has executed:
       
       mov ax, 7FF0h
-      add a1, 10h ;a. CF=     SF=     ZF=     OF=
-      add ah, 1   ;b. CF=     SF=     ZF=     OF=
-      add ax, 2   ;c. CF=     SF=     ZF=     OF=
+      add a1, 10h ;a. CF=  1   SF=  0   ZF=  1   OF=  0
+      add ah, 1   ;b. CF=  0   SF=  1   ZF=  0   OF=  1
+      add ax, 2   ;c. CF=  0   SF=  1   ZF=  0   OF=  0
