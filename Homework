@@ -1,0 +1,25 @@
+4.2.8
+Use the following data for question 1-5
+
+.data
+val1  BYTE  10h
+val2  WORD  8000h
+val3  DWORD 0FFFFh
+val4  WORD  7FFFh
+
+1. Write an instruction that increments val2.
+
+2. Write an instruction that subtracts val3 from EAX.
+
+3. Write instructions that subtract val4 from val2.
+
+4. If val2 is incremented by 1 using the ADD instruction, what will be the values of the Carry and Sign flags?
+
+5. If val4 is incremented by 1 using the ADD instruction, what will be the values of the Overflow and Sign flags?
+
+6. Where indicated, write down the values of the Carry, Sign, Zero, and Overflow flags after each instruction has executed:
+      
+      mov ax, 7FF0h
+      add a1, 10h ;a. CF=     SF=     ZF=     OF=
+      add ah, 1   ;b. CF=     SF=     ZF=     OF=
+      add ax, 2   ;c. CF=     SF=     ZF=     OF=
