@@ -25,3 +25,43 @@ val4  WORD  7FFFh
       add a1, 10h ;a. CF=  1   SF=  0   ZF=  1   OF=  0
       add ah, 1   ;b. CF=  0   SF=  1   ZF=  0   OF=  1
       add ax, 2   ;c. CF=  0   SF=  1   ZF=  0   OF=  0
+4.3.8
+1. (True/False): The OFFSET operator always returns a 16-bit value.
+                  False
+2. (True/False): The PTR operator returns the 32-bit address of a variable.
+                  False
+3. (True/False): The TYPE operator returns a value of 4 for doubleword operands.
+                  True
+4. (True/False): The LENGTHOF operator returns the number of bytes in an operand.
+                  False
+5. (True/False): The SIZEOF operator returns the number of bytes in an operand.
+                  True
+
+4.4.5
+4. (True/False): The following is an indexed operand: array[esi]
+                  True
+5. Use the following data for question 5
+      myBytes     BYTE  10h,20h,30h,40h
+      myWords     WORD  8Ah,3Bh,72h,44h,66h
+      myDoubles   DWORD 1,2,3,4,5
+      myPointer   DWORD myDoubles
+      
+Fill in the requested register values on the right side of the following instruction sequence:
+
+mov esi, OFFSET myBYTES
+mov al, [esi]                             ;a. AL=10h
+mov al, [esi+3]                           ;b. AL=40h
+mov esi, OFFSET myWORDS + 2               
+mov ax, [esi]                             ;c. AX=003Bh
+mov edi, 8                                
+mov edx, [myDoubles + edi]                ;d. EDX=3
+mov edx, myDoubles[edi]                   ;e. EDX=3
+mov ebx, myPointer                        
+mov eax, [ebx +4]                         ;f. EAX=2
+
+4.10
+7. Write a program with a loop and indirect addressing that copies a string from source to target, reversing the character order in
+      the process. Use the following variables:
+            source BYTE "This is the source string",0
+            target BYTE SIZEOF source DUP('#')
+
